@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interior Design Chatbot Suite</title>
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* ===== General Styles ===== */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    a, button { text-decoration: none; cursor: pointer; font-family: inherit; }
+
+    /* ===== Navbar ===== */
+    .navbar {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+    }
+    .logo { font-weight: bold; font-size: 1.3rem; color: #333; }
+    .nav-links { list-style: none; display: flex; gap: 15px; }
+    .nav-links .nav-btn {
+      background: none;
+      border: none;
+      font-size: 1rem;
+      padding: 6px 12px;
+      border-radius: 4px;
+      transition: 0.2s;
+    }
+    .nav-links .nav-btn:hover { background: #e0e0e0; }
+
+    /* ===== Hero Section ===== */
+    .hero { padding: 80px 20px; text-align: center; }
+    .card-hero {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px 20px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .card-hero h1 { font-size: 2rem; margin-bottom: 20px; color: #222; }
+    .card-hero p { font-size: 1rem; line-height: 1.6; color: #444; margin-bottom: 20px; }
+
+    .btn {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 5px;
+      transition: 0.2s;
+    }
+    .btn:hover { background: #45a049; }
+
+    /* ===== Info Section ===== */
+    .info-section {
+      max-width: 900px;
+      margin: 0 auto 60px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+    .info-section h2 { font-size: 1.6rem; margin-bottom: 15px; color: #222; }
+    .info-section p { font-size: 1rem; line-height: 1.6; color: #555; }
+
+    /* ===== Helper Note ===== */
+    .hint {
+      margin-top: 12px;
+      font-size: 0.95rem;
+      color: #666;
+    }
+
+    /* ===== Responsive ===== */
+    @media (max-width: 768px) {
+      .card-hero { padding: 30px 15px; }
+    }
+  </style>
+
+  <!-- ✅ Botpress Chat Bubble (paste from Botpress) -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.5/inject.js" defer></script>
+  <script src="https://files.bpcontent.cloud/2026/01/15/01/20260115015440-QTPHXD8I.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="#" class="logo">Interior Design Chatbot Suite</a>
+      <ul class="nav-links">
+        <li><button class="nav-btn" data-section="welcome">Home</button></li>
+        <li><button class="nav-btn" data-section="commercial">Commercial Info</button></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Welcome Section -->
+  <section id="welcome" class="section active">
+    <div class="container hero">
+      <h1>Welcome to Interior Design Chatbot Suite</h1>
+      <p>Your AI assistant for renovation guidance, budgeting, and design inspiration — tailored by property type.</p>
+    </div>
+  </section>
+
+  <!-- Commercial Section -->
+  <section id="commercial" class="section">
+    <div class="container">
+      <div class="hero card-hero">
+        <h1>Smart Commercial Renovation Guidance</h1>
+        <p>
+          Get quick guidance for offices, retail shops, and F&B outlets — including approvals (e.g., SCDF),
+          space planning, budgeting, and renovation process steps.
+        </p>
+
+        <!-- Button just guides user to open the bubble -->
+        <button class="btn" id="open-chat">Chat with Commercial AI</button>
+        <div class="hint">Tip: Click the chat bubble at the bottom-right to start chatting.</div>
+      </div>
+
+      <div class="info-section">
+        <h2>Commercial Renovation Info</h2>
+        <p>
+          Ask about approvals, licensing considerations, layout planning, estimated budget ranges,
+          and recommended renovation workflow steps.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scroll for navbar
+    const navButtons = document.querySelectorAll(".nav-btn");
+    navButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const section = document.getElementById(btn.dataset.section);
+        if (section) section.scrollIntoView({ behavior: "smooth" });
+      });
+    });
+
+    // Optional: when user clicks the button, scroll to bottom-right area and prompt them
+    const openBtn = document.getElementById("open-chat");
+    openBtn.addEventListener("click", () => {
+      alert("Click the chat bubble at the bottom-right to start chatting with the Commercial AI assistant.");
+    });
+  </script>
+
+</body>
+</html>
+
+
+ 
+
+

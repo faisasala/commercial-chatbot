@@ -91,9 +91,35 @@
       color: #666;
     }
 
+    /* ===== Media Section ===== */
+    .media-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 60px 20px;
+    }
+    .media-item {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .media-item video,
+    .media-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
     /* ===== Responsive ===== */
     @media (max-width: 768px) {
       .card-hero { padding: 30px 15px; }
+      .media-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px 40px 20px;
+      }
     }
   </style>
 
@@ -144,6 +170,30 @@
           Ask about approvals, licensing considerations, layout planning, estimated budget ranges,
           and recommended renovation workflow steps.
         </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Media Section -->
+  <section id="media" class="section">
+    <div class="container">
+      <div class="info-section">
+        <h2>Promotional Materials</h2>
+      </div>
+
+      <div class="media-container">
+        <!-- Video -->
+        <div class="media-item">
+          <video width="100%" controls poster="ChatGPT Image Jan 16, 2026, 09_50_54 PM.png">
+            <source src="Commercial Design Chatbot.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- Poster Image -->
+        <div class="media-item">
+          <img src="ChatGPT Image Jan 16, 2026, 09_50_54 PM.png" alt="Commercial Chatbot Poster">
+        </div>
       </div>
     </div>
   </section>
